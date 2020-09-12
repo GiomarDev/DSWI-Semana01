@@ -1,0 +1,56 @@
+﻿@model IEnumerable<S01.Models.Libro>
+    @using S01.Models;
+
+@{
+    ViewBag.Title = "listadoLibros";
+    var misLibros = (List<Libro>)ViewData["Lista"];
+}
+
+<h2>Listado de Libro</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paginas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in misLibros) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paginas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "modificaLibro", new {id=item.codigo }) |
+            @Html.ActionLink("Details", "detalleLibro", new { id = item.codigo }) |
+            @Html.ActionLink("Delete", "eliminaLibro", new { id = item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

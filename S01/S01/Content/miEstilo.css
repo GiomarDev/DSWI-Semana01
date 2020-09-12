@@ -1,0 +1,77 @@
+﻿body {
+    width: 960px;
+    background-color: aliceblue;
+    margin: auto;
+    padding: 0;
+}
+
+h2, h4, h6 {
+    font-family: Tahoma;
+    text-align: center;
+}
+
+footer {
+    background-color: darkcyan;
+    position: absolute;
+    padding: 0px;
+    bottom: 0px;
+    width: 960px;
+    height: 35px;
+    color: white;
+}
+
+#banner {
+    width: 960px;
+    height: 200px;
+}
+
+.menu {
+    position: relative;
+    top: 0px;
+    width: 960px;
+    height: 5%;
+    display: flex;
+    background-color: darkorange;
+    color: black;
+}
+
+    .menu ul {
+        display: flex;
+        margin: auto;
+    }
+
+    .menu li {
+        list-style: none;
+        padding: 10px 30px;
+    }
+
+        .menu li:hover {
+            background-color: yellow;
+            color: white;
+            cursor: pointer;
+        }
+
+    .menu ul li ul {
+        flex-direction: column;
+        position: absolute;
+        background-color: darkblue;
+        margin-top: 15px;
+        transform: rotateY(240deg) scale(0);
+        transition: all 1s;
+    }
+
+    .menu ul li:hover > ul {
+        transform: rotateY(0deg) scale(1);
+        transition: all 1s;
+        background-color: darkblue;
+    }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#foto {
+   display : block;
+   margin :auto;
+}
